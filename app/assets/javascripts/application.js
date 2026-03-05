@@ -1,6 +1,6 @@
 //= require jquery
-//= require jquery_ujs
-//= require jquery.ui.sortable
+//= require rails-ujs
+//= require jquery-ui/widgets/sortable
 //= require s3_direct_upload
 //= require turbolinks
 //= require_tree ../../../vendor/assets/javascripts/.

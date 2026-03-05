@@ -1,4 +1,4 @@
-class ChangeOrderColumnsToText < ActiveRecord::Migration
+class ChangeOrderColumnsToText < ActiveRecord::Migration[4.2]
   def up
     change_column :artists, :piece_order, :text
     change_column :exhibitions, :piece_order, :text

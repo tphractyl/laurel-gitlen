@@ -1,6 +1,4 @@
-FROM ruby:2.0.0
-
-ENV BUNDLER_VERSION=1.3.0
+FROM ruby:2.7
 
 # Install build deps
 RUN apt-get update -q && apt-get install -qy \
@@ -18,12 +16,11 @@ RUN apt-get update -q && apt-get install -qy \
   --no-install-recommends \
   && apt-get clean
 
-
 WORKDIR /app
 
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile ./
 
-RUN bundle check || bundle install
+RUN gem install bundler -v 2.4.22 && bundle install
 
 COPY . ./
 

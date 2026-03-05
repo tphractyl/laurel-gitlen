@@ -1,11 +1,11 @@
 class Admin::ExhibitionsController < ApplicationController
-  before_filter :require_login
-  before_filter :get_exhibition, only: [:edit, :show, :update, :destroy, :press_release_callback]
+  before_action :require_login
+  before_action :get_exhibition, only: [:edit, :show, :update, :destroy, :press_release_callback]
   
   layout 'admin'
   
   def index
-    @exhibitions = Exhibition.order("begins DESC").all(include: :pieces)
+    @exhibitions = Exhibition.order("begins DESC").includes(:pieces)
   end
   
   def new

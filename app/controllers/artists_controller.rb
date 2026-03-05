@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = Artist.on_roster.all(include: :pieces).sort_by { |a| a.name.split(" ").last.downcase }
+    @artists = Artist.on_roster.includes(:pieces).sort_by { |a| a.name.split(" ").last.downcase }
   end
   
   def show

@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def default_url_options(options={})
-    options.merge(protocol: :https)
+    options.merge(protocol: Rails.env.production? ? :https : :http)
   end
 end

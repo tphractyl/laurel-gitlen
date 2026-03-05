@@ -1,5 +1,5 @@
 class Admin::OrdersController < ApplicationController
-  before_filter :require_login, :get_orderable
+  before_action :require_login, :get_orderable
 
   def new
     @order = params[:order]

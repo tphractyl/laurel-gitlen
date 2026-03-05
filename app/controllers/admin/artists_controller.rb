@@ -1,7 +1,7 @@
 class Admin::ArtistsController < ApplicationController
-  before_filter :get_artist, only: [:edit, :show, :update, :aws_callback, :cv_callback, :press_callback, :destroy]
+  before_action :get_artist, only: [:edit, :show, :update, :aws_callback, :cv_callback, :press_callback, :destroy]
 
-  before_filter :require_login
+  before_action :require_login
   layout 'admin'
   
   def index

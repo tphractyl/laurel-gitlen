@@ -1,5 +1,5 @@
 class Admin::WorksController < ApplicationController
-  before_filter :get_artist
+  before_action :get_artist
   
   def new
   end

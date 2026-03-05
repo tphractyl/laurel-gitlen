@@ -1,6 +1,6 @@
 class Admin::DisplaysController < ApplicationController
   layout 'admin'
-  before_filter :get_exhibition
+  before_action :get_exhibition
   
   def new
   end
