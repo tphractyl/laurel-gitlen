@@ -41,5 +41,5 @@ gem 'newrelic_rpm' # New Relic for reporting
 # Handle uploads to AWS and background processing
 gem 's3_direct_upload'
 gem 'paperclip', '~> 5.0'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 2'
 gem 'sucker_punch', '~> 2.0'
