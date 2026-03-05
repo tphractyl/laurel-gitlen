@@ -3,5 +3,5 @@ S3DirectUpload.config do |c|
   c.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   c.bucket = ENV['AWS_BUCKET']
   c.region = ENV['AWS_REGION']
-  c.url = nil
+  c.url = "https://s3.amazonaws.com"
 end
