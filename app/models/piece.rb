@@ -4,7 +4,7 @@ class Piece < ActiveRecord::Base
   
   before_save :attach_artist, unless: Proc.new{|a| a.artist_name.blank?}
   before_save :strip_description
-  after_create :attach_image, if: :upload_url_changed?
+  after_create :attach_image, if: -> { upload_url.present? }
   
   scope :featured, -> { where(featured: true) }
   
