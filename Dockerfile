@@ -13,6 +13,7 @@ RUN apt-get update -q && apt-get install -qy \
   nodejs \
   postgresql \
   postgresql-contrib \
+  imagemagick \
   --no-install-recommends \
   && apt-get clean
 
