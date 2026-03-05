@@ -14,9 +14,10 @@ class Piece < ActiveRecord::Base
     whiny: false,
     styles: {
       thumb: 'x90',
-      medium: 'x480', 
+      medium: 'x480',
       large: '960x720'
     }
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
   def strip_description
     desc = self[:description]
