@@ -9,14 +9,3 @@
           %span.icon-bar
           %span.icon-bar
         %a.navbar-brand{ href: "/"} Laurel Gitlen
-      / Collect the nav links, forms, and other content for toggling
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        %ul.nav.navbar-nav
-          %li{class: controller_name == 'artists' ? "active" : ""}
-            =link_to 'Artists', '/artists'
-          %li{class: controller_name == 'exhibitions' ? "active" : ""}
-            =link_to 'Exhibitions', '/exhibitions'
-          %li{class: (current_page?('/news') || current_page?('/archives')) ? "active" : ""}
-            =link_to 'News', '/news'
-          %li{class: current_page?('/contact') ? "active" : ""}
-            =link_to 'Contact', '/contact'

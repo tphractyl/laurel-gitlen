@@ -10,3 +10,14 @@
           &mdash;
           %br
           =raw @exhibition.artists.map{ |a| a.name }.join('<br/>')
+      - @upcoming_exhibitions.each do |exhibition|
+        %br
+        %br
+        =raw date_markup(exhibition, true)
+        %br
+        = exhibition.pieces.blank? ? exhibition.name : link_to(exhibition.name, exhibition_url(exhibition))
+        - unless exhibition.artists.blank? || exhibition.artists.count > 3
+          %br
+          &mdash;
+          %br
+          =raw exhibition.artists.map{ |a| a.name }.join('<br/>')
